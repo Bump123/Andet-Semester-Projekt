@@ -1,5 +1,7 @@
 package db;
 
-public class ProductDBIF {
+public interface ProductDBIF {
+
+	public Product findProduct(int Productid); 
 
 }
