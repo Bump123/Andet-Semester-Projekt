@@ -11,12 +11,12 @@ public class ProductDB implements ProductDBIF{
 		return null;
 	} 
 	public static void updateStock(int quantity,int productnumber) {
-	     String QupdateStock = "UPDATE product SET stock = stock -=?" + "where productnumber = ?"; 
+	     String QupdateStock = "UPDATE product SET stock=stock+" +quantity + " where productnumber =?"; 
 	     try {
 	        PreparedStatement ps =  DBConnection.getInstance().getConnection().prepareStatement(QupdateStock); 
-	        ps.setInt(quantity, 0);
-	        ps.setInt(productnumber, 0); 
-	        ps.executeUpdate();
+	        //ps.setInt(1,quantity);
+	        ps.setInt(1,productnumber); 
+	        ps.execute();
 	    } catch (SQLException e) {
 	        // TODO Auto-generated catch block
 	        e.printStackTrace();
