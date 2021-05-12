@@ -11,11 +11,11 @@ public class Order {
 	private int productId;
 	private List<OrderLine> orderLines;
 	
-	public Order(int orderId, int quantity, boolean orderstate, String deliveryInfo, int productId) {
+	public Order(int orderId, int quantity, boolean orderState, String deliveryInfo, int productId) {
 		super();
 		this.orderId = orderId;
 		this.quantity = quantity;
-		this.orderstate = orderstate;
+		this.orderState = orderState;
 		this.deliveryInfo = deliveryInfo;
 		this.productId = productId;
 		this.orderLines = new ArrayList<>();
@@ -37,12 +37,12 @@ public class Order {
 		this.quantity = quantity;
 	}
 
-	public boolean isOrderstate() {
-		return orderstate;
+	public boolean isOrderState() {
+		return orderState;
 	}
 
-	public void setOrderstate(boolean orderstate) {
-		this.orderstate = orderstate;
+	public void setOrderState(boolean orderstate) {
+		this.orderState = orderstate;
 	}
 
 	public String getDeliveryInfo() {
