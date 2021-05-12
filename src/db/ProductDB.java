@@ -6,8 +6,6 @@ import java.sql.SQLException;
 <<<<<<< HEAD
 import model.Product;
 
-=======
->>>>>>> 0eced6dfe3b104f0f60669b20ba7061d17d035e6
 public class ProductDB implements ProductDBIF{
 
 	@Override

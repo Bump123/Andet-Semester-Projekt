@@ -10,23 +10,15 @@ import java.sql.Statement;
 public class DBConnection {
 	private Connection connection = null;
 	private static DBConnection dbConnection;
-	
 	private static final String driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-<<<<<<< HEAD
 	private static final String dbName = "wsws";
 	//private static final String serverAddress = "localhost";
 	private static final String serverAddress = "192.168.56.2";
 	private static final int    serverPort = 1433;
 	private static final String userName = "sa";
 	private static final String password = "secret";
-=======
-	private static final String dbName = "test for projekt";
-	private static final String serverAddress = "localhost";
-	//private static final String serverAddress = "192.168.56.2";
-	private static final int    serverPort = 1433;
-	private static final String userName = "sa";
-	private static final String password = "evg29txw";
->>>>>>> 0eced6dfe3b104f0f60669b20ba7061d17d035e6
+	
+
 	
 	private DBConnection() {
 		String connectionString = String.format("jdbc:sqlserver://%s:%d;databaseName=%s;user=%s;password=%s", 
