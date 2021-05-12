@@ -1,7 +1,9 @@
 package db;
 
+import model.Product;
+
 public interface ProductDBIF {
 
-	public Product findProduct(int Productid); 
+	Product findProduct(int Productid); 
 
 }
