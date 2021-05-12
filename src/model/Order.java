@@ -41,8 +41,8 @@ public class Order {
 		return orderState;
 	}
 
-	public void setOrderState(boolean orderstate) {
-		this.orderState = orderstate;
+	public void setOrderState(boolean orderState) {
+		this.orderState = orderState;
 	}
 
 	public String getDeliveryInfo() {
