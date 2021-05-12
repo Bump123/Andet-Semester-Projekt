@@ -3,9 +3,9 @@ package controller;
 import db.ProductDBIF;
 
 public class ProductController {
-private ProductDBIF pDBIF = new ProductDBIF(); 
+private ProductDBIF pDBIF;
 
 public void findProduct (int productid) {
-	pDBIF.findProduct();
+	pDBIF.findProduct(productid);
 }
 }
