@@ -2,12 +2,15 @@ package model;
 
 public class OrderLine {
 	private int amountOfProducts;
-	private int totalPriceOfProducts;
-
-	public OrderLine(int amountOfProducts, int totalPriceOfProducts) {
+	private Product product;
+	
+	public OrderLine(int amountOfProducts, int totalPriceOfProducts, Product p) {
 		super();
 		this.amountOfProducts = amountOfProducts;
-		this.totalPriceOfProducts = totalPriceOfProducts;
+		this.product = p;
+	}
+
+	public OrderLine(Product p, int qty) {
 	}
 
 	public int getAmountOfProducts() {
@@ -17,19 +20,15 @@ public class OrderLine {
 	public void setAmountOfProducts(int amountOfProducts) {
 		this.amountOfProducts = amountOfProducts;
 	}
+
 	
-	public int getTotalPriceOfProducts() {
-		return totalPriceOfProducts;
-	}
-	
-	public void setTotalPriceOfProducts(int totalPriceOfProducts) {
-		this.totalPriceOfProducts = totalPriceOfProducts;
+
+	public Product getProduct() {
+		return product;
 	}
 
-	@Override
-	public String toString() {
-		return "OrderLine [amountOfProducts=" + amountOfProducts + ", totalPriceOfProducts=" + totalPriceOfProducts
-				+ "]";
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	
 	

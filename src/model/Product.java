@@ -6,15 +6,24 @@ public class Product {
 	private int price;
 	private String description;
 	private String size;
-
-	public Product(int productNumber, String name, int price, String description, String size) {
+	private int quantity;
+	private int stock;
+	
+	public Product(int productNumber, String name, int price, String description, String size, int quantity, int stock) {
 		super();
 		this.productNumber = productNumber;
 		this.name = name;
 		this.price = price;
 		this.description = description;
 		this.size = size;
+		this.quantity = quantity;
+		this.stock = stock;
 	}
+
+	public Product(int productNumber) {
+		this.productNumber = productNumber;
+	}
+	
 
 	public int getProductNumber() {
 		return productNumber;
@@ -56,7 +65,21 @@ public class Product {
 		this.size = size;
 	}
 
+	public int getQuantity() {
+		return quantity;
+	}
 
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 
 
 }

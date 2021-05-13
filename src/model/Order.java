@@ -6,21 +6,37 @@ import java.util.List;
 public class Order {
 	private int orderId;
 	private int quantity;
-	private boolean orderState;
-	private String deliveryInfo;
 	private int productId;
 	private List<OrderLine> orderLines;
+	private int shopOrderId;
+	
+	
 	
 	public Order(int orderId, int quantity, boolean orderState, String deliveryInfo, int productId) {
 		super();
 		this.orderId = orderId;
 		this.quantity = quantity;
-		this.orderState = orderState;
-		this.deliveryInfo = deliveryInfo;
 		this.productId = productId;
 		this.orderLines = new ArrayList<>();
 	}
+	
+	public Order(int shopOrderId) {
+		this.shopOrderId = shopOrderId;
+	}
 
+	
+	public Order() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getShopOrderId() {
+		return shopOrderId;
+	}
+
+	public void setShopOrderId(int shopOrderId) {
+		this.shopOrderId = shopOrderId;
+	}
+	
 	public int getOrderId() {
 		return orderId;
 	}
@@ -36,22 +52,7 @@ public class Order {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
-	public boolean isOrderState() {
-		return orderState;
-	}
-
-	public void setOrderState(boolean orderState) {
-		this.orderState = orderState;
-	}
-
-	public String getDeliveryInfo() {
-		return deliveryInfo;
-	}
-
-	public void setDeliveryInfo(String deliveryInfo) {
-		this.deliveryInfo = deliveryInfo;
-	}
+	
 
 	public int getProductId() {
 		return productId;
@@ -71,6 +72,16 @@ public class Order {
 
 	public void setOrderLines(List<OrderLine> orderLines) {
 		this.orderLines = orderLines;
+	}
+
+	public void addOrderLine(Product p, int qty) {
+		OrderLine ol = new OrderLine(p, qty);
+		this.orderLines.add(ol);
+	}
+	
+	@Override
+	public String toString() {
+		return "Order [shopOrderId=" + shopOrderId + "]";
 	}
 	
 	
