@@ -7,8 +7,10 @@ import java.sql.SQLException;
 
 import controller.ProductController;
 import db.DataAccessException;
+import db.OrderDBIF;
 
 public class OrderController {
+	private OrderDBIF oDBIF;
 
 	ProductController pCtrl = new ProductController();
 	Order o = new Order();
@@ -28,6 +30,7 @@ public class OrderController {
 		Product p = pCtrl.findReserveStock(productNumber, quantity);
 		OrderLine ol = new OrderLine(p, quantity);
 		o.addOrderLine(productNumber, quantity);
+		oDBIF.SaveOrder(o);
 	}
 	
 	
