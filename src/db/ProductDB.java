@@ -40,7 +40,7 @@ public class ProductDB implements ProductDBIF {
 	public Product buildObject(ResultSet rs) throws DataAccessException {
 		Product p = null;
 		try {
-			if(rs.getString("acc_material").equals("NULL")) {
+			if(rs.getString("size").equals("onesize")) {
 				p = new Clothing(rs.getInt("productnumber"), rs.getString("name"), rs.getInt("price"), rs.getString("description"), rs.getString("size"), rs.getString("color"),rs.getString("material"), rs.getString("style"), rs.getInt("stock"), p.getQuantity());
 			} else if (rs.getString("material").equals("NULL")) {
 				p = new Accessory(rs.getInt("productnumber"), rs.getString("name"), rs.getInt("price"), rs.getString("description"), rs.getString("size"), rs.getString("acc_material"),rs.getString("acc_color"), rs.getString("style"), rs.getInt("stock"), p.getQuantity());

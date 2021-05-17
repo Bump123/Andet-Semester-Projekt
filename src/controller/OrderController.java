@@ -4,17 +4,22 @@ import model.Order;
 import model.OrderLine;
 import model.Product;
 import java.sql.SQLException;
-
+import db.OrderDBIF;
+import db.ProductDB;
 import controller.ProductController;
 import db.DataAccessException;
+import db.OrderDB;
 
 public class OrderController {
-
+	private OrderDBIF orderDBIF;
+	private Order o;
 	ProductController pCtrl = new ProductController();
-	Order o = new Order();
+
+
 	
-	public OrderController() {
+	public OrderController() throws DataAccessException {
 		pCtrl = new ProductController();
+		orderDBIF = new OrderDB();
 	}
 	
 	public String recieveOrder(int i) {
@@ -26,11 +31,14 @@ public class OrderController {
 
 	public void recieveOrderLine(int productNumber, int quantity) throws SQLException, DataAccessException {
 		Product p = pCtrl.findReserveStock(productNumber, quantity);
-		OrderLine ol = new OrderLine(p, quantity);
-		o.addOrderLine(productNumber, quantity);
+		this.o.addOrderLine(p, quantity);
 	}
 	
+	public Order completeOrder() throws DataAccessException {
 	
+		orderDBIF.saveOrder(o);
+		return o;
+	}
 
 
 }

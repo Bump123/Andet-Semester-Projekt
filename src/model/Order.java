@@ -6,28 +6,28 @@ import java.util.List;
 public class Order {
 	private int orderId;
 	private int quantity;
-	private int productId;
-	private List<OrderLine> orderLines;
+	private int productNumber;
+	private ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
 	private int shopOrderId;
+	private Product product;
 	
 	
-	
-	public Order(int orderId, int quantity, boolean orderState, String deliveryInfo, int productId) {
+	public Order(int orderId, int quantity, String deliveryInfo, int productNumber) {
 		super();
 		this.orderId = orderId;
 		this.quantity = quantity;
-		this.productId = productId;
+		this.productNumber = productNumber;
 		this.orderLines = new ArrayList<>();
 	}
 	
 	public Order(int shopOrderId) {
 		this.shopOrderId = shopOrderId;
 	}
-
 	
-	public Order() {
-		// TODO Auto-generated constructor stub
+	public Order(int orderId, String deliveryinfo, int productNumber) {
+		this(0, orderId, deliveryinfo, productNumber);
 	}
+
 
 	public int getShopOrderId() {
 		return shopOrderId;
@@ -54,23 +54,20 @@ public class Order {
 	}
 	
 
-	public int getProductId() {
-		return productId;
+	public int getProductNumber() {
+		return productNumber;
 	}
 
-	public void setProductId(int productId) {
-		this.productId = productId;
+	public void setProductNumber(int productNumber) {
+		this.productNumber = product.getProductNumber();
 	}
 
-	public void addOrderLine(int productNumber, int quantity) {
-		
-	}
 
 	public List<OrderLine> getOrderLines() {
 		return orderLines;
 	}
 
-	public void setOrderLines(List<OrderLine> orderLines) {
+	public void setOrderLines(ArrayList<OrderLine> orderLines) {
 		this.orderLines = orderLines;
 	}
 

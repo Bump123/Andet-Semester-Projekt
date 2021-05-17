@@ -5,23 +5,26 @@ import db.DataAccessException;
 import java.sql.SQLException;
 import db.DBConnection;
 import model.Product;
-
+import db.ProductDB;
 
 public class ProductController {
 	private ProductDBIF pDBIF; 
-	private DBConnection dbCon;
 	private Product p;
 	
 	
-
+	public ProductController() throws DataAccessException {
+		pDBIF = new ProductDB();
+	}
+	
+	
 	public Product findReserveStock(int productNumber, int quantity) throws SQLException, DataAccessException  {
 		
 		try {
-			dbCon.startTransaction();
+			DBConnection.getInstance().startTransaction();
 			pDBIF.findReserveStock(productNumber, quantity);
-			dbCon.commitTransaction();
+			DBConnection.getInstance().commitTransaction();
 		} catch (SQLException e) {
-			dbCon.rollbackTransaction();
+			DBConnection.getInstance().rollbackTransaction();
 		}
 		return p;
 

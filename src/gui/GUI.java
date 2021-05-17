@@ -3,6 +3,7 @@ package gui;
 import java.sql.SQLException;
 
 import controller.OrderController;
+import controller.ProductController;
 import db.DataAccessException;
 import db.ProductDB;
 import model.Order;
@@ -11,15 +12,13 @@ public class GUI {
 
 	public static void main(String[] args) throws SQLException, DataAccessException {
 		OrderController orderCtrl = new OrderController();
+		//ProductController productCtrl = new ProductController();
 		//GeneratedOrder go = new GeneratedOrder();
 		
 		
 		System.out.println(orderCtrl.recieveOrder(6));
 		orderCtrl.recieveOrderLine(1, 2);
 		
-//		int quantity = 10; 
-//		int productnumber = 4;		
-//		ProductDB.updateStock(quantity, productnumber);
 	}
 
 }
