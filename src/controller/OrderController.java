@@ -32,6 +32,8 @@ public class OrderController {
 	public void recieveOrderLine(int productNumber, int quantity) throws SQLException, DataAccessException {
 		Product p = pCtrl.findReserveStock(productNumber, quantity);
 		this.o.addOrderLine(p, quantity);
+		OrderLine ol = new OrderLine(p, quantity);
+		o.addOrderLine(productNumber, quantity);
 	}
 	
 	public Order completeOrder() throws DataAccessException {
