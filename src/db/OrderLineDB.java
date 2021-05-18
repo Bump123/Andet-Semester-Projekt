@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.OrderLine;
 
 public class OrderLineDB {
-	private static final String INSERT_Q  = "insert into orderlines (amountofproducts, totalpriceofProducts, orderid) values (?, ?, ?)";
+	private static final String INSERT_Q  = "insert into orderline (amountofproducts, totalpriceofProducts, orderid) values (?, ?, ?)";
 	private PreparedStatement insert;
 
 	public OrderLineDB() throws DataAccessException {
@@ -18,15 +18,19 @@ public class OrderLineDB {
 	}
 
 	public void saveOrderLine(int oid, OrderLine ol) throws DataAccessException {
-		try {
+		try { 
 			insert.setInt(1, ol.getAmountOfProducts());
-			insert.setInt(2, ol.getProduct().getProductNumber());
-			insert.setInt(3, oid);
+			insert.setInt(2, 4);
+			insert.setInt(3, oid); 
+			int olid = DBConnection.getInstance().executeInsertWithIdentity(insert);
+			
 			insert.executeUpdate();
 		} catch (SQLException e) {
 			throw new DataAccessException("can't save", e);
 		}
 	}
+
+	
 	
 	
 }

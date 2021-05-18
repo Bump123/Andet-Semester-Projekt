@@ -14,7 +14,7 @@ public class OrderController {
 	private OrderDBIF orderDBIF;
 	private Order o;
 	ProductController pCtrl = new ProductController();
-
+	private Product p;
 
 	
 	public OrderController() throws DataAccessException {
@@ -30,16 +30,17 @@ public class OrderController {
 	
 
 	public void recieveOrderLine(int productNumber, int quantity) throws SQLException, DataAccessException {
-		Product p = pCtrl.findReserveStock(productNumber, quantity);
-		this.o.addOrderLine(p, quantity);
-		OrderLine ol = new OrderLine(p, quantity);
-		o.addOrderLine(p, quantity);
+	    p = pCtrl.findReserveStock(productNumber, quantity);
+	    this.o.addOrderLine(p, quantity);
+	    
+		
+		
 	}
 	
-	public Order completeOrder() throws DataAccessException {
+	public void completeOrder() throws DataAccessException {
 	
 		orderDBIF.saveOrder(o);
-		return o;
+		
 	}
 
 
