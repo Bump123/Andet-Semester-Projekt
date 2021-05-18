@@ -23,7 +23,7 @@ public class OrderController {
 	}
 	
 	public String recieveOrder(int i) {
-		Order o = new Order(i);
+		o = new Order(i);
 		o.setShopOrderId(i);
 		return o.toString();
 	}
@@ -33,7 +33,7 @@ public class OrderController {
 		Product p = pCtrl.findReserveStock(productNumber, quantity);
 		this.o.addOrderLine(p, quantity);
 		OrderLine ol = new OrderLine(p, quantity);
-		o.addOrderLine(productNumber, quantity);
+		o.addOrderLine(p, quantity);
 	}
 	
 	public Order completeOrder() throws DataAccessException {

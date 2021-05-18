@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import model.Order;
 
 public class OrderDB implements OrderDBIF {
-	private static final String INSERT_Q ="insert into orders(deliveryinfo, type, quantity, staffid_packager, staffid_plucker) values (?, ?, ?, ?, ?)";
+	private static final String INSERT_Q ="insert into orders(deliveryinfo, type, quantity, staffid_packager, staffid_plucked) values (?, ?, ?, ?, ?)";
 	
 	private PreparedStatement insert;
 	private OrderLineDB olDB;
@@ -23,13 +23,18 @@ public class OrderDB implements OrderDBIF {
 	
 	public Order saveOrder(Order order) throws DataAccessException {
 		 try {
+			 insert.setString(1, "deliveryinfo");
+			 insert.setString(2, "type");
+			 insert.setInt(3, order.getQuantity());
+			 insert.setInt(4, 1);
+			 insert.setInt(5, 2);
 			 int oid = DBConnection.getInstance().executeInsertWithIdentity(insert);
-			 order.setOrderId(oid);
-			 insert.setString(2, "deliveryinfo");
-			 insert.setString(3, "type");
-			 insert.setInt(4, order.getQuantity());
-			 insert.setInt(5, 1);
-			 insert.setInt(6, 2);
+			 order.setOrderId(oid); 
+			 
+			
+			
+			
+			 
 
 		 } catch(SQLException e) {
 			 throw new DataAccessException("could not insert", e);
