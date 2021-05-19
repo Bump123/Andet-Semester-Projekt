@@ -8,50 +8,41 @@ import model.Product;
 import db.ProductDB;
 
 public class ProductController {
-	private ProductDBIF pDBIF; 
-	private Product p;
-	
-	
+	private ProductDBIF pDBIF;
+
 	public ProductController() throws DataAccessException {
 		pDBIF = new ProductDB();
-		
-	}
-	
-	
-	public Product findReserveStock(int productNumber, int quantity) throws SQLException, DataAccessException  {
 
+	}
+
+	public Product findReserveStock(int productNumber, int quantity) throws SQLException, DataAccessException {
+		Product p = null;
 		try {
 			DBConnection.getInstance().startTransaction();
-			pDBIF.findReserveStock(productNumber, quantity);
-			getQuantity();
-			setQuantity();
+			p = pDBIF.findByProductNumber(productNumber);
+			
+			int qty = p.getStock() - quantity;
+			if (qty > 0) {
+				p.setQuantity(qty);
+			}else if (qty == 0) {
+				System.out.println("please restock "+ p.getProductNumber() + "it's selling too well");
+				p.setQuantity(qty);
+				pDBIF.updateStock(p);
+				}
+			 else {
+				throw new RuntimeException("can't sell stock is minus");
+			} 
+			
+			pDBIF.updateStock(p);
+
 			DBConnection.getInstance().commitTransaction();
+
 		} catch (SQLException e) {
 			DBConnection.getInstance().rollbackTransaction();
+			p = null;
 		}
 		return p;
 
 	}
 
-	public Product findByProductNumber(int productNumber, int quantity) throws DataAccessException {
-		return pDBIF.findReserveStock(productNumber, quantity);
-	}
-	
-	
-	public int getQuantity() {
-		int quantity = p.getQuantity();
-		System.out.println(p.getQuantity());
-		return quantity;
-	}
-	
-	public void setQuantity() {
-		int stock = p.getStock();
-		int qty = p.getQuantity();
-		p.setStock(stock - qty);
-		System.out.println(p.getStock());
-	}
-	
-	
-	
-	
 }

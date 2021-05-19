@@ -17,7 +17,7 @@ public class GUI {
 		
 		
 		System.out.println(orderCtrl.recieveOrder(6));
-		orderCtrl.recieveOrderLine(1, 2); 
+		orderCtrl.recieveOrderLine(3, 8); 
 		orderCtrl.completeOrder();
 		
 	}

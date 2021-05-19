@@ -26,9 +26,10 @@ public class Product {
 	
 	public Product(int productNumber, int quantity) {
 		this.productNumber = productNumber;
-		this.quantity = 5;
+		this.quantity = quantity;
 	}
 
+	
 	public int getProductNumber() {
 		return productNumber;
 	}

@@ -5,6 +5,10 @@ import model.Product;
 public interface ProductDBIF {
 
 
-	Product findReserveStock(int productNumber, int quantity) throws DataAccessException; 
 	
+	Product findByProductNumber(int productNumber)throws DataAccessException;
+
+	void updateStock(Product p) throws DataAccessException;
 }
+
+	
