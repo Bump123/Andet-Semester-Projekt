@@ -14,14 +14,17 @@ public class ProductController {
 	
 	public ProductController() throws DataAccessException {
 		pDBIF = new ProductDB();
+		
 	}
 	
 	
 	public Product findReserveStock(int productNumber, int quantity) throws SQLException, DataAccessException  {
-		
+
 		try {
 			DBConnection.getInstance().startTransaction();
 			pDBIF.findReserveStock(productNumber, quantity);
+			getQuantity();
+			setQuantity();
 			DBConnection.getInstance().commitTransaction();
 		} catch (SQLException e) {
 			DBConnection.getInstance().rollbackTransaction();
@@ -37,6 +40,7 @@ public class ProductController {
 	
 	public int getQuantity() {
 		int quantity = p.getQuantity();
+		System.out.println(p.getQuantity());
 		return quantity;
 	}
 	
@@ -44,6 +48,7 @@ public class ProductController {
 		int stock = p.getStock();
 		int qty = p.getQuantity();
 		p.setStock(stock - qty);
+		System.out.println(p.getStock());
 	}
 	
 	
