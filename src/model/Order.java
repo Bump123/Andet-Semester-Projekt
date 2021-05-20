@@ -72,7 +72,7 @@ public class Order {
 	}
 
 	public void addOrderLine(Product p, int qty) {
-		OrderLine ol = new OrderLine(p, qty);
+		OrderLine ol = new OrderLine(qty, p.getPrice() ,p);
 		this.orderLines.add(ol);
 	}
 	

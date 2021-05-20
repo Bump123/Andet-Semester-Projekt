@@ -20,7 +20,7 @@ public class OrderLineDB {
 	public void saveOrderLine(int oid, OrderLine ol) throws DataAccessException {
 		try { 
 			insert.setInt(1, ol.getAmountOfProducts());
-			insert.setInt(2, 4);
+			insert.setInt(2, ol.getTotalPriceOfProducts());
 			insert.setInt(3, oid); 
 			int olid = DBConnection.getInstance().executeInsertWithIdentity(insert);
 			
