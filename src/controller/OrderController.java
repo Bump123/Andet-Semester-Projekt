@@ -29,7 +29,8 @@ public class OrderController {
 	public void recieveOrderLine(int productNumber, int quantity) throws SQLException, DataAccessException {
 		Product p = pCtrl.findReserveStock(productNumber, quantity);
 		if (p != null) {
-			this.o.addOrderLine(p, quantity);
+			this.o.addOrderLine(p, quantity); 
+			o.setQuantity(quantity);
 		} else {
 			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udføres 
 			System.out.println("neeeeeeeeejjjjjjjjjjjjj");
