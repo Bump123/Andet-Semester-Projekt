@@ -16,7 +16,7 @@ public class DBConnection {
 	//private static final String serverAddress = "192.168.56.2";
 	private static final int    serverPort = 1433;
 	private static final String userName = "sa";
-	private static final String password = "secret";
+	private static final String password = "evg29txw";
 	
 
 	
