@@ -12,12 +12,8 @@ public class GUI {
 
 	public static void main(String[] args) throws SQLException, DataAccessException {
 		OrderController orderCtrl = new OrderController();
-		//ProductController productCtrl = new ProductController();
-		//GeneratedOrder go = new GeneratedOrder();
-		
-		
-		System.out.println(orderCtrl.recieveOrder(6));
-		orderCtrl.recieveOrderLine(2, 1); 
+		orderCtrl.recieveOrder(6);
+		orderCtrl.recieveOrderLine(1, 1); 
 		orderCtrl.completeOrder();
 		
 	}

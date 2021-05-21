@@ -9,7 +9,7 @@ import db.ProductDB;
 
 public class ProductController {
 	private ProductDBIF pDBIF;
-
+	
 	public ProductController() throws DataAccessException {
 		pDBIF = new ProductDB();
 
@@ -43,6 +43,10 @@ public class ProductController {
 		}
 		return p;
 
-	}
+	} 
+//	public int getWuantity() {
+//		int i =p.getQuantity(); 
+//		return i;
+//	}
 
 }

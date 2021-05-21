@@ -41,6 +41,10 @@ public class OrderController {
 
 		orderDBIF.saveOrder(o);
 
-	}
+	} 
+//	public int getquantity() {
+//	int i =pCtrl.getWuantity(); 
+//	return i;
+//	}
 
 }

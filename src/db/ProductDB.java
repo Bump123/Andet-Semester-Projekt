@@ -12,12 +12,15 @@ public class ProductDB implements ProductDBIF {
 	private static final String FIND_BY_PRODUCTNUMBER_Q = "select productnumber, name, price, size, description, stock, material, color, style, acc_material, acc_color from product where productnumber = ?";	
 	private PreparedStatement findByProductNumber;
 	private PreparedStatement updatequantity; 
-	private static final String UPDATE_QANTITY_Q = "UPDATE product SET stock  =?" + " where productnumber =?"; 
+	private static final String UPDATE_QANTITY_Q = "UPDATE product SET stock  =?" + " where productnumber =?";  
+	private static final String GET_QUANTITY_BY_PRODUCTID_Q= "select stock from product where productnumber =? "; 
+	private PreparedStatement findQuantity;
 	
 	public ProductDB() throws DataAccessException {
 		try {
 			findByProductNumber = DBConnection.getInstance().getConnection().prepareCall(FIND_BY_PRODUCTNUMBER_Q);
-			updatequantity = DBConnection.getInstance().getConnection().prepareStatement(UPDATE_QANTITY_Q);
+			updatequantity = DBConnection.getInstance().getConnection().prepareStatement(UPDATE_QANTITY_Q); 
+			findQuantity = DBConnection.getInstance().getConnection().prepareStatement(GET_QUANTITY_BY_PRODUCTID_Q);
 		} catch (SQLException e) {
 			throw new DataAccessException("could not prepare statement", e);
 		}
@@ -41,6 +44,7 @@ public class ProductDB implements ProductDBIF {
 		
 		return p;
 	}
+	
 
 	@Override
 	public Product findByProductNumber(int productNumber) throws DataAccessException {
@@ -77,5 +81,25 @@ public class ProductDB implements ProductDBIF {
 
 		
 	}
+
+	public int getQuantity(int i) throws SQLException, DataAccessException {
+		try {
+		//findQuantity.setInt(1, i); 
+		//ResultSet rs = findQuantity.executeQuery(); 
+		findByProductNumber.setInt(1, i);	
+		ResultSet rs = findByProductNumber.executeQuery();
+		Product p = null;
+		if(rs.next()) {	
+			p = buildObject(rs);
+		}
+		 int e =p.getStock(); 
+		 return e;
+		} catch(SQLException e){
+			throw new DataAccessException("could not retrieve data", e);
+
+		}
+		
+	}
+	
 
 }
