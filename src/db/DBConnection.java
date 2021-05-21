@@ -116,4 +116,8 @@ public class DBConnection {
 			e.printStackTrace();
 		}
 	}
+	public static boolean instanceIsNull()
+    {
+       return (DBConnection.getInstance() == null);
+    }
 }

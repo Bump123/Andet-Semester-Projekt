@@ -92,8 +92,9 @@ public class ProductDB implements ProductDBIF {
 		if(rs.next()) {	
 			p = buildObject(rs);
 		}
-		 int e =p.getStock(); 
-		 return e;
+		 int e =p.getQuantity();
+		 int b = e;
+		 return b;
 		} catch(SQLException e){
 			throw new DataAccessException("could not retrieve data", e);
 
