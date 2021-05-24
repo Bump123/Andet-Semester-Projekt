@@ -25,7 +25,7 @@ public class OrderDB implements OrderDBIF {
 	public Order saveOrder(Order order) throws DataAccessException {
 		 try {
 			 insert.setString(1, "deliveryinfo");
-			 insert.setString(2, "type");
+			 insert.setString(2, order.getType());
 			 insert.setInt(3, order.getQuantity());
 			 insert.setInt(4, 1);
 			 insert.setInt(5, 2);

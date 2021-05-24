@@ -3,6 +3,7 @@ package model;
 public class Clothing extends Product {
 
 
+	
 	private String clothingMaterial;
 	private String clothingColor;
 	private String clothingStyle;

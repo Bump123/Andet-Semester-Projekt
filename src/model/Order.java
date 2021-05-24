@@ -10,22 +10,24 @@ public class Order {
 	private ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
 	private int shopOrderId;
 	private Product product;
+	private String type;
 	
 	
-	public Order(int orderId, int quantity, String deliveryInfo, int productNumber) {
+	public Order(int orderId, int quantity, String deliveryInfo, int productNumber, String type) {
 		super();
 		this.orderId = orderId;
 		this.quantity = quantity;
 		this.productNumber = productNumber;
-		this.orderLines = new ArrayList<>();
+		this.orderLines = new ArrayList<>(); 
+		this.type = type;
 	}
 	
 	public Order(int shopOrderId) {
 		this.shopOrderId = shopOrderId;
 	}
 	
-	public Order(int orderId, String deliveryinfo, int productNumber) {
-		this(0, orderId, deliveryinfo, productNumber);
+	public Order(int orderId, String deliveryinfo, int productNumber, String type) {
+		this(0, orderId, deliveryinfo, productNumber, type);
 	}
 
 
@@ -79,6 +81,16 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [shopOrderId=" + shopOrderId + "]";
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		
+	}
+
+	public String getType() {
+		
+		return type;
 	}
 	
 	

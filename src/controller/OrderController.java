@@ -30,7 +30,8 @@ public class OrderController {
 		Product p = pCtrl.findReserveStock(productNumber, quantity);
 		if (p != null) {
 			this.o.addOrderLine(p, quantity); 
-			o.setQuantity(quantity);
+			o.setQuantity(quantity); 
+			o.setType(p.getName());
 		} else {
 			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udføres 
 			System.out.println("neeeeeeeeejjjjjjjjjjjjj");

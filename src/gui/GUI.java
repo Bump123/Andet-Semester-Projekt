@@ -13,7 +13,7 @@ public class GUI {
 	public static void main(String[] args) throws SQLException, DataAccessException {
 		OrderController orderCtrl = new OrderController();
 		orderCtrl.recieveOrder(6);
-		orderCtrl.recieveOrderLine(1, 1); 
+		orderCtrl.recieveOrderLine(3, 1); 
 		orderCtrl.completeOrder();
 		
 	}
