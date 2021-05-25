@@ -61,10 +61,6 @@ public class Testsucces {
 	public void wasConnected() {
 		assertNull("Connected - connection cannot be null", con);
 		
-		DBConnection.getInstance();
-		boolean wasNotNullified = DBConnection.instanceIsNull();
-		assertFalse("connected - instance set to not null", wasNotNullified);
-		
 		con = DBConnection.getInstance();
 		assertNotNull("Connected - connection cannot be null", con);		
 	}
