@@ -22,7 +22,7 @@ public class Testsucces {
 
 	}
 	@Test
-	public void purchase() throws SQLException, DataAccessException {
+	public void successfulStockupdate() throws SQLException, DataAccessException {
 		// arrange
 		ProductDB pdb = new ProductDB();
 		int productNumber = 4;
@@ -38,16 +38,15 @@ public class Testsucces {
 	}
 
 	@Test
-	public void stockreachesZeroafterpurchase() throws SQLException, DataAccessException {
+	public void lastItemInStockOrdered() throws SQLException, DataAccessException {
 		// arrange
-		// vi skal finde ud af hvad quantity på vores database er. Vores actual skal
-		// være en get fra databasen på et bestemt produktnummer
+		
 		ProductDB pdb = new ProductDB();
 		
 		int quantity = 2;
 		int productNumber = 3;
 		int expectedquantity = 0;
-		//int actualquantity = pdb.getQuantity(productNumber);
+		
 		// act
 		ocl.recieveOrder(6);
 		ocl.recieveOrderLine(productNumber, quantity);
@@ -55,10 +54,10 @@ public class Testsucces {
 		ocl.completeOrder();
 		assertEquals("should equal 0", expectedquantity, actualquantity);
 		System.out.println(actualquantity);
-		// ("e quantity burde være 0", expectedquantity,System.out.println(quantity)) ;
+		
 	}
 	@Test
-	public void wasConnected() {
+	public void databaseUnavailable() {
 		assertNull("Connected - connection cannot be null", con);
 		
 		con = DBConnection.getInstance();
