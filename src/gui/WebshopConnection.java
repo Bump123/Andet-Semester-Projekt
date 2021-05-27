@@ -8,7 +8,7 @@ import db.DataAccessException;
 import db.ProductDB;
 import model.Order;
 
-public class GUI {
+public class WebshopConnection {
 
 	public static void main(String[] args) throws SQLException, DataAccessException {
 		OrderController orderCtrl = new OrderController();
