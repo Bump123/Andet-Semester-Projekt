@@ -22,7 +22,8 @@ public class OrderController {
 
 	public String recieveOrder(int i) {
 		o = new Order(i);
-		o.setShopOrderId(i);
+		o.setShopOrderId(i); 
+		o.setDeliveryinfo("Satans vej 666");;
 		return o.toString();
 	}
 

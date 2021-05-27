@@ -10,25 +10,27 @@ public class Order {
 	private ArrayList<OrderLine> orderLines = new ArrayList<OrderLine>();
 	private int shopOrderId;
 	private Product product;
+	private String deliveryinfo;
 	private String type;
 	
 	
-	public Order(int orderId, int quantity, String deliveryInfo, int productNumber, String type) {
+	public Order(int orderId, int quantity, String deliveryInfo, int productNumber, String type,String deliveryinfo) {
 		super();
 		this.orderId = orderId;
 		this.quantity = quantity;
 		this.productNumber = productNumber;
 		this.orderLines = new ArrayList<>(); 
-		this.type = type;
+		this.type = type;  
+		this.deliveryinfo = deliveryinfo;
 	}
 	
 	public Order(int shopOrderId) {
 		this.shopOrderId = shopOrderId;
 	}
 	
-	public Order(int orderId, String deliveryinfo, int productNumber, String type) {
-		this(0, orderId, deliveryinfo, productNumber, type);
-	}
+//	public Order(int orderId, String deliveryinfo, int productNumber, String type, ) {
+//		this(0, orderId, deliveryinfo, productNumber, type);
+//	}
 
 
 	public int getShopOrderId() {
@@ -92,9 +94,15 @@ public class Order {
 		
 		return type;
 	}
+
+	public String getDeliveryInfo() {
+		return deliveryinfo;
+	}
 	
 	
-	
+	public void setDeliveryinfo(String deliveryinfo) {
+		this.deliveryinfo = deliveryinfo;
+	}
 	
 	
 }
