@@ -9,7 +9,8 @@ import model.Clothing;
 import model.Product;
 
 public class ProductDB implements ProductDBIF {
-	private static final String FIND_BY_PRODUCTNUMBER_Q = "select productnumber, name, price, size, description, stock, material, color, style, type, acc_material, acc_color from product where productnumber = ?";	
+	private static final String FIND_BY_PRODUCTNUMBER_Q = "select productnumber, name, price, size, description, stock, "
+			+ "material, color, style, type, acc_material, acc_color from product where productnumber = ?";	
 	private PreparedStatement findByProductNumber;
 	private PreparedStatement updatequantity; 
 	private static final String UPDATE_QANTITY_Q = "UPDATE product SET stock  =?" + " where productnumber =?";  
@@ -70,7 +71,7 @@ public class ProductDB implements ProductDBIF {
 	@Override
 	public void updateStock(Product p) throws DataAccessException {
 		try {
-		//PreparedStatement ps = DBConnection.getInstance().getConnection().prepareStatement(UPDATE_QANTITY_Q);
+		
 		updatequantity.setInt(1, p.getQuantity());
 		updatequantity.setInt(2, p.getProductNumber());
 		updatequantity.executeUpdate();
