@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import model.OrderLine;
 
-public class OrderLineDB {
+public class OrderLineDB implements OrderLineDBIF {
 	private static final String INSERT_Q  = "insert into orderline (amountofproducts, totalpriceofProducts, orderid) values (?, ?, ?)";
 	private PreparedStatement insert;
 

@@ -10,7 +10,7 @@ public class OrderDB implements OrderDBIF {
 	private static final String INSERT_Q ="insert into orders(deliveryinfo, type, quantity, staffid_packager, staffid_plucked) values (?, ?, ?, ?, ?)";
 	
 	private PreparedStatement insert;
-	private OrderLineDB olDB;
+	private OrderLineDBIF olDB;
 	
 	public OrderDB() throws DataAccessException{
 		try {
