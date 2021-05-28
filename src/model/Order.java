@@ -13,7 +13,6 @@ public class Order {
 	private String deliveryinfo;
 	private String type;
 	
-	
 	public Order(int orderId, int quantity, String deliveryInfo, int productNumber, String type,String deliveryinfo) {
 		super();
 		this.orderId = orderId;
@@ -28,11 +27,6 @@ public class Order {
 		this.shopOrderId = shopOrderId;
 	}
 	
-//	public Order(int orderId, String deliveryinfo, int productNumber, String type, ) {
-//		this(0, orderId, deliveryinfo, productNumber, type);
-//	}
-
-
 	public int getShopOrderId() {
 		return shopOrderId;
 	}
@@ -91,7 +85,6 @@ public class Order {
 	}
 
 	public String getType() {
-		
 		return type;
 	}
 
@@ -99,10 +92,8 @@ public class Order {
 		return deliveryinfo;
 	}
 	
-	
 	public void setDeliveryinfo(String deliveryinfo) {
 		this.deliveryinfo = deliveryinfo;
 	}
-	
 	
 }

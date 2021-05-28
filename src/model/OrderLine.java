@@ -23,8 +23,6 @@ public class OrderLine {
 		this.amountOfProducts = amountOfProducts;
 	}
 
-	
-
 	public Product getProduct() {
 		return product;
 	}
@@ -40,7 +38,4 @@ public class OrderLine {
 	public void setTotalPriceOfProducts(int totalPriceOfProducts) {
 		this.totalPriceOfProducts = totalPriceOfProducts;
 	}
-	
-	
-	
 }

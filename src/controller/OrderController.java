@@ -23,7 +23,7 @@ public class OrderController {
 	public String recieveOrder(int i) {
 		o = new Order(i);
 		o.setShopOrderId(i); 
-		o.setDeliveryinfo("Satans vej 666");;
+		o.setDeliveryinfo("Vejen 45");;
 		return o.toString();
 	}
 
@@ -34,20 +34,14 @@ public class OrderController {
 			o.setQuantity(quantity); 
 			o.setType(p.getName());
 		} else {
-			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udføres 
-			System.out.println("neeeeeeeeejjjjjjjjjjjjj");
+			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udfï¿½res 
+			System.out.println("Ordre kan kun blive delvist udfÃ¸rt " + o.getShopOrderId());
 		}
 
 	}
 
 	public void completeOrder() throws DataAccessException {
-
 		orderDBIF.saveOrder(o);
-
 	} 
-//	public int getquantity() {
-//	int i =pCtrl.getWuantity(); 
-//	return i;
-//	}
 
 }

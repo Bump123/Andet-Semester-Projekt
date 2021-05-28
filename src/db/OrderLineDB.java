@@ -23,14 +23,13 @@ public class OrderLineDB implements OrderLineDBIF {
 			insert.setInt(2, ol.getTotalPriceOfProducts());
 			insert.setInt(3, oid); 
 			int olid = DBConnection.getInstance().executeInsertWithIdentity(insert);
-			
 			insert.executeUpdate();
 		} catch (SQLException e) {
 			throw new DataAccessException("can't save", e);
 		}
 	}
 
-	
-	
-	
+
+
+
 }

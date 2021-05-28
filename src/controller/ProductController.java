@@ -12,7 +12,6 @@ public class ProductController {
 	
 	public ProductController() throws DataAccessException {
 		pDBIF = new ProductDB();
-
 	}
 
 	public Product findReserveStock(int productNumber, int quantity) throws SQLException, DataAccessException {
@@ -24,12 +23,11 @@ public class ProductController {
 			int qty = p.getStock() - quantity;
 			if (qty > 0) {
 				p.setQuantity(qty);
-			}else if (qty == 0) {
+			} else if (qty == 0) {
 				System.out.println("please restock "+ p.getProductNumber() + "it's selling too well");
 				p.setQuantity(qty);
 				pDBIF.updateStock(p);
-				}
-			 else {
+			} else {
 				throw new RuntimeException("can't sell stock is minus");
 			} 
 			
@@ -44,9 +42,5 @@ public class ProductController {
 		return p;
 
 	} 
-//	public int getWuantity() {
-//		int i =p.getQuantity(); 
-//		return i;
-//	}
 
 }
