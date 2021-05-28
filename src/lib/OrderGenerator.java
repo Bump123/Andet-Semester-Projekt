@@ -34,7 +34,7 @@ public class OrderGenerator{
 	
 	
 	public int getQty() {
-		this.qty = random.nextInt(4)+1;
+		this.qty = random.nextInt(2)+1;
 		return qty;
 	}
 	

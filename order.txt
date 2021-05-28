@@ -1,8 +1,2 @@
 shoporderid id	quantity
-<<<<<<< HEAD
-6 5 1
-7 1 2
-=======
-3			3		1
-10			4		3
->>>>>>> fa116b3d7771bd4c2347ac22b41c5003b573ea12
+3			3		2
