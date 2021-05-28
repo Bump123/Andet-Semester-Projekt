@@ -7,8 +7,8 @@ import controller.OrderController;
 import controller.ProductController;
 import db.DataAccessException;
 import db.ProductDB;
-import library.FileReader;
-import library.OrderGenerator;
+import lib.FileReader;
+import lib.OrderGenerator;
 import model.Order;
 
 public class WebshopConnection {
