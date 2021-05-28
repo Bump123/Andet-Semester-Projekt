@@ -7,9 +7,9 @@ public class Product {
 	private String description;
 	private String size;
 	private int quantity;
-	private int stock;
+	private int stock; 
 	
-	public Product(int productNumber, String name, int price, String description, String size, int quantity, int stock) {
+	public Product(int productNumber, String name, int price, String description,  String size, int quantity, int stock) {
 		super();
 		this.productNumber = productNumber;
 		this.name = name;
@@ -17,7 +17,7 @@ public class Product {
 		this.description = description;
 		this.size = size;
 		this.quantity = quantity;
-		this.stock = stock;
+		this.stock = stock; 
 	}
 
 	public Product(int productNumber) {
@@ -28,7 +28,6 @@ public class Product {
 		this.productNumber = productNumber;
 		this.quantity = quantity;
 	}
-
 	
 	public int getProductNumber() {
 		return productNumber;
@@ -85,6 +84,5 @@ public class Product {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-
 
 }

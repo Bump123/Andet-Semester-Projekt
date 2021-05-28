@@ -4,12 +4,10 @@ public class Accessory extends Product {
 
 	private String accessoryMaterial;
 	private String accessoryColor;
-	private String accessoryStyle;
-	
-	
+	private String accessoryStyle; 
 
 	public Accessory(int productNumber, String name, int price, String description, String size, String accessoryMaterial, String accessoryColor, String accessoryStyle, int stock, int quantity) {
-		super(productNumber, name, price, description, size, stock, quantity);
+		super(productNumber, name, price, description, size, stock, quantity ); 
 		this.accessoryMaterial = accessoryMaterial;
 		this.accessoryColor = accessoryColor;
 		this.accessoryStyle = accessoryStyle;
@@ -39,5 +37,4 @@ public class Accessory extends Product {
 		this.accessoryStyle = accessoryStyle;
 	}
 
-	
 }

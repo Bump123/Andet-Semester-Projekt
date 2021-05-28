@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import model.OrderLine;
 
-public class OrderLineDB {
+public class OrderLineDB implements OrderLineDBIF {
 	private static final String INSERT_Q  = "insert into orderline (amountofproducts, totalpriceofProducts, orderid) values (?, ?, ?)";
 	private PreparedStatement insert;
 
@@ -23,14 +23,13 @@ public class OrderLineDB {
 			insert.setInt(2, ol.getTotalPriceOfProducts());
 			insert.setInt(3, oid); 
 			int olid = DBConnection.getInstance().executeInsertWithIdentity(insert);
-			
 			insert.executeUpdate();
 		} catch (SQLException e) {
 			throw new DataAccessException("can't save", e);
 		}
 	}
 
-	
-	
-	
+
+
+
 }

@@ -2,7 +2,6 @@ package model;
 
 public class Clothing extends Product {
 
-
 	private String clothingMaterial;
 	private String clothingColor;
 	private String clothingStyle;
@@ -12,11 +11,8 @@ public class Clothing extends Product {
 		this.clothingColor = clothingColor;
 		this.clothingMaterial = clothingMaterial;
 		this.clothingStyle = clothingStyle;
-		
 	}
 	
-
-
 	public String getClothingMaterial() {
 		return clothingMaterial;
 	}
@@ -40,9 +36,5 @@ public class Clothing extends Product {
 	public void setClothingStyle(String clothingStyle) {
 		this.clothingStyle = clothingStyle;
 	}
-
-
-
-
 	
 }
