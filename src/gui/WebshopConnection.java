@@ -26,7 +26,7 @@ public class WebshopConnection {
 			orderCtrl.recieveOrderLine(f.orders.get(i).getId(), f.orders.get(i).getQuantity()); 
 			orderCtrl.completeOrder();
 		}
-		System.out.println(f.orders.toString());
+		System.out.println("Genereret ordrelinje: " + f.orders.toString());
 
 		
 		
