@@ -7,10 +7,14 @@
 		</attributes>
 	</classpathentry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Casper/Documents/Programming/sqljdbc4.jar"/>
 =======
 	<classpathentry kind="lib" path="src/lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="src/lib/junit-4.10.jar"/>
 >>>>>>> fa116b3d7771bd4c2347ac22b41c5003b573ea12
+=======
+	<classpathentry kind="lib" path="C:/Users/mathi/Desktop/JarFiles/sqljdbc4.jar"/>
+>>>>>>> parent of aa30a80 (Virker med Hildur og auto genereret ordre)
 	<classpathentry kind="output" path="bin"/>
 </classpath>

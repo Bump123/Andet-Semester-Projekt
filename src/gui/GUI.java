@@ -1,12 +1,7 @@
 package gui;
 
-import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-import javax.swing.plaf.basic.BasicBorders;
-
-import library.*;
 import controller.OrderController;
 import controller.ProductController;
 import db.DataAccessException;
@@ -15,21 +10,16 @@ import model.Order;
 
 public class GUI {
 
-	public static void main(String[] args) throws SQLException, DataAccessException, IOException {
+	public static void main(String[] args) throws SQLException, DataAccessException {
 		OrderController orderCtrl = new OrderController();
-		OrderGenerator ogen = new OrderGenerator();
-		FileReader fr = new FileReader();
-		GeneratedOrderLine gol = new GeneratedOrderLine();
-		ArrayList<GeneratedOrderLine> completedOrders = new ArrayList<>();
+		//ProductController productCtrl = new ProductController();
+		//GeneratedOrder go = new GeneratedOrder();
 		
-		ogen.createOrderTxt();
-		fr.readFile();
-
-		orderCtrl.recieveOrder(gol.getShopOrderId());
-		orderCtrl.recieveOrderLine(gol.getId(), gol.getQuantity()); 
+		
+		System.out.println(orderCtrl.recieveOrder(6));
+		orderCtrl.recieveOrderLine(2, 1); 
 		orderCtrl.completeOrder();
-		System.out.println(fr.orders.toString());
-
+		
 	}
 
 }

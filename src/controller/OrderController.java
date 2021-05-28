@@ -34,8 +34,12 @@ public class OrderController {
 			o.setQuantity(quantity); 
 			o.setType(p.getName());
 		} else {
+<<<<<<< HEAD
 			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udfÔøΩres 
 <<<<<<< HEAD
+=======
+			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udf¯res 
+>>>>>>> parent of aa30a80 (Virker med Hildur og auto genereret ordre)
 			System.out.println("neeeeeeeeejjjjjjjjjjjjj");
 =======
 			System.out.println("Ordre kan kun blive delvist udf√∏rt " + o.getShopOrderId());
