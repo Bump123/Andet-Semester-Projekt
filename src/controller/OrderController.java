@@ -31,7 +31,7 @@ public class OrderController {
 		if (p != null) {
 			this.o.addOrderLine(p, quantity);
 		} else {
-			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udføres 
+			//skriv en retur fil til webshoppen der lader dem se hvilke ordrer kun kan delvist udfï¿½res 
 			System.out.println("neeeeeeeeejjjjjjjjjjjjj");
 		}
 
