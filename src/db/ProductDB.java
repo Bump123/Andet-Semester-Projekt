@@ -33,7 +33,7 @@ public class ProductDB implements ProductDBIF {
 	public Product buildObject(ResultSet rs) throws DataAccessException {
 		Product p = null;
 		try {
-			if(rs.getString("type").equals("tï¿½j")) {
+			if(rs.getString("type").equals("tøj")) {
 				p = new Clothing(rs.getInt("productnumber"), rs.getString("name"), rs.getInt("price"), rs.getString("description"), rs.getString("size"), rs.getString("color"),rs.getString("material"), rs.getString("style"), rs.getInt("stock"), rs.getInt("stock"));
 			} else  {
 				p = new Accessory(rs.getInt("productnumber"), rs.getString("name"), rs.getInt("price"), rs.getString("description"), rs.getString("size"), rs.getString("acc_material"),rs.getString("acc_color"), rs.getString("style"), rs.getInt("stock"),rs.getInt("stock"));
