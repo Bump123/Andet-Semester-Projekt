@@ -35,7 +35,7 @@ public class OrderController {
 			o.setType(p.getName());
 		} else {
 
-			System.out.println("Ordre kan kun blive delvist udfÃ¸rt " + o.getShopOrderId());
+			System.out.println("Ordre kan kun blive delvist udført " + o.getShopOrderId());
 		}
 
 	}
